@@ -25,8 +25,8 @@ public class TransferenciaResource {
     @GetMapping
     public ResponseEntity<Page<ListarTransferenciaDTO>> findAll(Pageable paginacao,
                                                                 @RequestParam(name = "numeroConta", required = false) String numeroConta,
-                                                                @RequestParam(name = "dataInicial", required = false) LocalDate dataInicial,
-                                                                @RequestParam(name = "dataFinal", required = false) LocalDate dataFinal,
+                                                                @RequestParam(name = "dataInicial", required = false) String dataInicial,
+                                                                @RequestParam(name = "dataFinal", required = false) String dataFinal,
                                                                 @RequestParam(name = "operadorTransacao", required = false) String operadorTransacao){
 
         var transferencias = transferenciaService.findAll(numeroConta, dataInicial,  dataFinal, operadorTransacao, paginacao).map(ListarTransferenciaDTO::new);

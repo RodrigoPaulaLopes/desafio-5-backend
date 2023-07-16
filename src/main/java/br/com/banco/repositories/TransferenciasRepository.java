@@ -17,4 +17,6 @@ public interface TransferenciasRepository extends JpaRepository<Transferencia, L
     Page<Transferencia> findByContaNumeroContaAndDataTransferenciaBetweenAndOperadorTransacao(String numeroConta, LocalDate dataInicial, LocalDate dataFinal, String operadorTransacao, Pageable pageable);
 
     Page<Transferencia> findByOperadorTransacao( String operadorTransacao, Pageable paginacao);
+
+    Page<Transferencia> findByDataTransferenciaBetween(LocalDate dataInicial, LocalDate dataFinal, Pageable paginacao);
 }
